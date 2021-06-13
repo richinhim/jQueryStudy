@@ -1,3 +1,5 @@
+
+
 $(function(){
 
     var $aside = $('aside'),
@@ -21,7 +23,7 @@ $(function(){
     console.log($button.find('img').attr('src'));
 
     $button.click(function(){
-        // $aside.stop().animate({left:'0px'},$duration);
+    //$aside.stop().animate({left:'0px'},$duration);
 
         //$aside.addClass('open');
 

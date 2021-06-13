@@ -62,9 +62,11 @@ button {
 /*
 add
 */
+
 .page-main > aside.open {
     right: -70px;
 }
+
 
 .page-main > aside ul {
     margin: 0;
@@ -85,7 +87,7 @@ add
     position: absolute;
     top: 150px;
     /*left: 350px;*/
-    right: 100%;
+    right: 100%;  /*add*/
     width: 52px;
     height: 132px;
     margin: 0;

@@ -20,9 +20,11 @@
 
 .slideshow_slides a {
     position: absolute;    
-    left: 50%;
-    transform:translateX(-50%);
+    width: 100%;
+    height: 100%;
+    text-align: center;
 }
+
 
 .slideshow_nav a {
     width: 71px;
@@ -55,7 +57,7 @@
     left: 0;
     right: 0;
     /* text-align: center; */
-    display: flex;
+   display: flex;
     justify-content: center;
 }
 

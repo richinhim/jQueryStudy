@@ -1,47 +1,53 @@
 $(function () {
-    // 변수지정
-        var slides = $('.slideshow img'), 
-            slideCount = slides.length, 
-            currentIndex = 0; 
+    
+  var container  =   $('.slideshow'),
+      //slideGroup = $('.slideshow .slideshow_slides')
+      slideGroup =   container.find('.slideshow_slides'),
+      slides     =   slideGroup.find('a'),
+      nav        =   container.find('.slideshow_nav'),
+      
+      indicator  =   container.find('.indicator'),
+      slideCount =   slides.length,
+      
+      indicatorHtml = '',
+      currentIndex  = 0,
+      duration      = 500,
+      easing        = 'easeInOutExpo',
+      interval      = 3500,
+      timer;
 
-            slides.eq(currentIndex).fadeIn();			
-			
-		var timer = undefined;  //타이머의 값을 undefined(지정되어 있지 않다)라고 지정합니다.
-			
-		if (timer == undefined) { //타이머의 값이 undefined이면 showNextslide를 3.5s 마다 실행하라고 합니다.
-			timer = setInterval(showNextSlide, 3500);
-		}         
+      //수도 코드 작성
+      //슬라이드를 가로로 배열 
+      //slides 마다 할일, left 0%, 100%, 200%, 300%
 
-            function showNextSlide(){
+      console.log(slides);
 
-              var nextIndex = (currentIndex + 1) % slideCount;
+      slides.each(function(i){
+        var newLeft = i * 100 + '%';
+        $(this).css({left: newLeft});
 
-              slides.eq(currentIndex).fadeOut();
-              slides.eq(nextIndex).fadeIn();
-              currentIndex = nextIndex;
+        // <a href="" >1</a>
+        // var i = 2; i = i +2; i+=2
+        // indicatorHtml = indicatorHtml +??
+        //indicatorHtml += ??;
+        indicatorHtml += '<a href="" >' + (i+1) + '</a>';
+      
+        //console.log(indicatorHtml);
 
-              console.log(currentIndex);
 
-            }
+      });//slides.each
+      //A.text(B); a요소의 내용을 글씨 형태로 추가 
+      //A.html(B); a요소의 내용을 html 형태로 추가
 
-            function timeron(){
-			if (!timer) { //타이머의 값이 undefined이면 showNextslide를 3.5s 마다 실행하라고 합니다.
-				timer = setInterval(showNextSlide, 3500);
-			  } 
-            }
-            function timeroff(){
-			  if (timer) { //타이머의 값이 있으면 즉 setInterval(showNextSlide, 3500)값이 있으면 클리어하고 값을 다시 undefined로 저장.
-				clearInterval(timer);
-				timer = undefined;				
-			  }	
-            }
+      console.log(indicatorHtml);
 
-            slides.mouseenter(function(){
-              timeroff();
-            })
-            .mouseleave(function(){
-              timeron();
-            })
+      //console.log("indicator="+container.html());
 
+      indicator.html(indicatorHtml);
+      $('.indicator').html(indicatorHtml);
+      //indicator.html("<span class='red'>Hello <b>Again</b></span>" );
+
+      //console.log("indicator="+ $('.indicator').html());
+      
 
 });

@@ -37,6 +37,14 @@
     text-indent: -9999em;
 }
 
+/*
+css add
+*/
+.slideshow_nav a.disabled {
+
+    display: none;
+}
+
 .slideshow_nav a.prev{
     background-position: 0 -20px;
     margin-left: -480px;

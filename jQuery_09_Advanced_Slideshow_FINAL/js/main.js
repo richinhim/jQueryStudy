@@ -57,7 +57,9 @@ $(function () {
 
         console.log(currentIndex);
 
-        updateNav();//처음인지, 마지막인지 검사.
+        updateNav();//처음인지, 마지막인지 검사. active 
+
+        
 
       }
       
@@ -71,7 +73,7 @@ $(function () {
         console.log(idx);
 
         goToSlide(idx);
-        
+                
       });
 
       function updateNav(){
@@ -91,6 +93,20 @@ $(function () {
         }else{
           navNext.removeClass('disabled');
         }
+
+        //1.모든 요소에서 active 빼고, 원하는 요소에만 active 추가
+        // indicator.find('a').removeClass('active');
+
+        // //요소순번 선택 .eq(숫자)        
+        // indicator.find('a').eq(currentIndex).addClass('active');
+
+        
+
+        //2.원하는 요소에만 active 추가하고 나머지들에서 active 빼기
+        // 형제 자매는 영어로? siblings
+        indicator.find('a').eq(currentIndex).addClass('active')
+        .siblings().removeClass('active');     
+
 
       }//updateNav()
 
@@ -139,5 +155,39 @@ $(function () {
       //처음 시작시 prev 사라지도록, next도 사라지도록 함 
       updateNav();
       
+      //자동 슬라이드 함수 
+      function startTimer(){
+          //일정시간 마다 할일
+          //setInterval(할일, 시간), clearInterval(이름);
+          //할일(함수) function(){실제로 할일}
+
+          timer = setInterval(function(){
+
+
+            //nextIndex c0 n1, c1 n2,....c3 n0
+            // (0+1) % 4 = 1,..... (3+1) % 4 = 0  
+            var nextIndex = (currentIndex + 1) % slideCount;
+            goToSlide(nextIndex);
+          }, interval)
+      }
+
+      startTimer();
+
+      function stopTimer(){
+
+        clearInterval(timer);
+
+      }
+
+      container.mouseenter(function(){
+
+        stopTimer();
+
+      }).mouseleave(function(){
+
+        startTimer();
+      });
+
+
 
 });

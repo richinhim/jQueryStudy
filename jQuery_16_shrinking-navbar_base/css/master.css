@@ -42,6 +42,22 @@ header {
     border-bottom: 2px solid #ccc;
     width: 100%;
     height: 6em;
+    transition: .3s ease-in-out; /* add */
+}
+
+/*
+add
+*/
+header.shrink{
+    height: 4em;
+    background: rgba(255, 255, 255, .8);
+}
+
+/*
+add
+*/
+header.shrink nav ul li{
+   line-height: 4em;
 }
 
 nav ul {
@@ -54,6 +70,8 @@ nav ul {
         margin-left: 1em;
         list-style: none;
         line-height: 6em;
+        transition: .3s ease-in-out; /* add */
+
     }
 
 #logo {

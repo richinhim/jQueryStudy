@@ -8,10 +8,12 @@
   <a href="#">Click to hide me too</a>
   <p>Here is another paragraph</p>
 <script>
-    $("p").hide();
+    $("p").hide(); // display:none;
+
     $("a").click(function ( event ) {
       event.preventDefault();
-      $(this).hide();
+      //$(this).hide();
+      $(this).fadeOut();
     });
 </script>
 

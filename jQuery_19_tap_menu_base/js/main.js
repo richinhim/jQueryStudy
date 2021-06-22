@@ -1,18 +1,9 @@
 $(function () {
-	var tabAnchor = $('.tabs-nav li'),
-		tabPanel = $('.tabs-panel');
-		
-	tabAnchor.on('click',function(e){
-		e.preventDefault();
-		tabAnchor.find('a').removeClass('active');
-		$(this).find('a').addClass('active');
-		//var tabIdx = $(this).index();
-
-		tabPanel.hide();		
-		tabPanel.eq($(this).index()).show();
+	$('.work-section').tabs({
+		show: { duration: 300 },
+		show: { duration: 300 },
 	});
-	
-	tabAnchor.eq(0).trigger('click');		
 
 });
 
+//https://jqueryui.com/tabs/ - 참고 

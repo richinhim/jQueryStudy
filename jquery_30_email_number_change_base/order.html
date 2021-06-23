@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script src="jquery.number.min.js"></script>
+
+	<script src="main.js"></script>
 </head>
 <body>
 <h1>주문하기</h1>
@@ -26,6 +28,7 @@
 				<option value="naver.com">naver</option>
 				<option value="gmail.com">gmail</option>
 				<option value="yahoo.com">yahoo</option>
+				<option value="">직접입력</option>
 			</select>
 		</p>
 	</fieldset>
@@ -33,11 +36,11 @@
 		<legend>주문정보</legend>
 		<p>
 			<span>i pad mini 64GB</span>
-			<span class="unitprice number">400000</span>원
+			<span class="unitprice" data-unitprice="400000">400,000</span>원
 			<span>
 				<a href="#" id="minus"> - </a> / 
-				<a href="#" id="plus"> + </a>
-				개수: <em class="count number">1</em>
+				<a href="#" id="plus" class="plus"> + </a>
+				개수: <em class="count">1</em>
 			</span>
 			합계 : 
 			<span class="total number">

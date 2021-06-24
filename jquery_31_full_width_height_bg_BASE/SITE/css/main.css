@@ -8,7 +8,13 @@ body { height: 100%; overflow: hidden; }
 .full-bg {
     position: absolute;
 }
-.full-bg img {
+/* .full-bg img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+} */
+
+.full-bg video {
     position: absolute;
     height: 100%;
     width: 100%;

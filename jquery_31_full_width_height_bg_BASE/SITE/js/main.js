@@ -10,7 +10,9 @@ $(function(){
             windowWidth = currentWindow.width(),
             windowHeight = currentWindow.height(),
             browerRatio = windowWidth / windowHeight,
-            imageRatio = 864/486;
+            
+            //imageRatio = 864/486;
+            imageRatio = 854/480;
 
             if(imageRatio > browerRatio){
 
@@ -27,7 +29,7 @@ $(function(){
                     height:windowWidth / imageRatio, //이미지 너비 / 이미지 비율 
                     width:'100%',
                     left:0,
-                    top: (windowHeight - windowWidth / imageRatio / ima)/2 //(브라우저 높이 - 이미지 높이)/2
+                    top: (windowHeight - windowWidth / imageRatio)/2 //(브라우저 높이 - 이미지 높이)/2
                 });
             }
 

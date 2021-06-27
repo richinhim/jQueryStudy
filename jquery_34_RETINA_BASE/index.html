@@ -15,11 +15,20 @@
 	</div>
 
 	<!-- Add yarn components -->
+	<h2>javascript retina img</h2>
 	<img src="images/image.jpg" class="ratina" alt="image for pc">
+
+
+	<h2>retina.js img</h2>
+	<img src="images/image.jpg" data-at2x="images/image@2x.jpg" alt="image for pc">
+
 	<script src="https://code.jquery.com/git/jquery-3.x-git.min.js"></script>
+	<script src="retina.js"></script>
 	<script>
 
 		//https://developer.mozilla.org/ko/docs/Web/API/Window/devicePixelRatio
+		//javascript 이용 
+
 		var $ratio = window.devicePixelRatio;
 
 		console.log($ratio);
@@ -29,7 +38,7 @@
 			$('.ratina').attr('src','images/image@2x.jpg').css({width:500, height:333});
 
 		}else{
-			
+
 			$('.ratina').attr('src','images/image.jpg');
 		}
 

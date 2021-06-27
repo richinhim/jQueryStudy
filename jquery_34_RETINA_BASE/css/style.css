@@ -1,0 +1,17 @@
+.demo-container {
+    width: 500px;
+    height: 333px;
+    background: url(../images/image.jpg) no-repeat 0 0 / 100% 100%;/* 컨터이너(background) 사이즈를 100% 100% */
+    text-indent: -9999em;
+
+}
+
+/*
+    @media screen and (max-width:480px){}
+                      (min-width:480px){} 
+*/
+@media screen and (-webkit-min-device-pixel-ratio:2){ /* css media query */
+    .demo-container {
+        background-image: url(../images/image@2x.jpg);
+    }
+}

@@ -14,7 +14,27 @@
 		<p>demo container</p>
 	</div>
 
-	<!-- Add Bower components -->
+	<!-- Add yarn components -->
+	<img src="images/image.jpg" class="ratina" alt="image for pc">
+	<script src="https://code.jquery.com/git/jquery-3.x-git.min.js"></script>
+	<script>
+
+		//https://developer.mozilla.org/ko/docs/Web/API/Window/devicePixelRatio
+		var $ratio = window.devicePixelRatio;
+
+		console.log($ratio);
+
+		if($ratio > 1){
+
+			$('.ratina').attr('src','images/image@2x.jpg').css({width:500, height:333});
+
+		}else{
+			
+			$('.ratina').attr('src','images/image.jpg');
+		}
+
+
+	</script>
 
 </body>
 </html>

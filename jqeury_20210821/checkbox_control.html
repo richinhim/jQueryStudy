@@ -1,0 +1,42 @@
+<html>
+    <head>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+
+<script>
+
+    $(function(){
+
+        //1. ID값으로 접근
+
+        if($('#targetChkbox').is(':checked') == true){
+
+            alert('id checked');
+        }else{
+            alert('id unchecked');
+        }
+
+        //2. name 값으로 접근
+
+        if($('input[name="tmpChkbox1"]').is(':checked')){
+
+            alert('name checked');
+
+        }else{
+            alert('name unchecked');
+        }
+    });
+
+    //https://zxchsr.tistory.com/88
+
+</script>
+</head>
+<body>
+    <!-- checkbox 체크(checked) 여부 - 단일 -->
+    <input type="checkbox" id="targetChkbox" name="tmpChkbox"><label for="targetChkbox">체크박스</label>
+    <br>
+    <input type="checkbox" id="targetChkbox1" name="tmpChkbox1" checked><label for="targetChkbox1">체크박스1</label>
+</body>
+</html>

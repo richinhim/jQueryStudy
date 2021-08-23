@@ -1,0 +1,29 @@
+<html>
+    <head>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+
+
+</head>
+<body>
+    
+    <select id="tmpSelect">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+    </select>
+
+    <script>
+
+        $("#tmpSelect").val('C').prop("selected", true);
+   
+        //   https://zxchsr.tistory.com/99?category=867193
+    
+        //*eq(0)=첫번째
+
+        $("#tmpSelect option:eq(0)").prop("selected", true);
+    </script>
+</body>
+</html>

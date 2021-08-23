@@ -1,0 +1,39 @@
+<html>
+    <head>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+
+
+</head>
+<body>
+    <input type='checkbox' name='tmpChkbox[]' value='A' checked>
+    <input type='checkbox' name='tmpChkbox[]' value='B' checked>
+    <input type='checkbox' name='tmpChkbox[]' value='C'>
+    <button type="button" onclick="clkBtn()">체크된 값 배열로 생성</button>
+
+    <script>
+
+    function clkBtn(){
+
+        var chkArray = new Array();
+
+        $("input[name='tmpChkbox[]']:checked").each(function() { 
+            var tmpVal = $(this).val(); 
+            chkArray.push(tmpVal);
+        });
+
+        if( chkArray.length < 1 ){
+            alert("값을 선택해주시기 바랍니다.");
+            return;
+        }
+
+        console.log(chkArray);	// (2) ["A", "B"]
+
+    }
+        //https://zxchsr.tistory.com/88
+    
+    </script>
+</body>
+</html>

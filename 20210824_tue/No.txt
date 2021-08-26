@@ -1,0 +1,104 @@
+8월 24, 2021 10:14:41 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: 서버 버전 이름:    Apache Tomcat/9.0.50
+8월 24, 2021 10:14:41 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: Server 빌드 시각:  Jun 28 2021 08:46:44 UTC
+8월 24, 2021 10:14:41 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: Server 버전 번호:  9.0.50.0
+8월 24, 2021 10:14:41 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: 운영체제 이름:     Windows 8.1
+8월 24, 2021 10:14:41 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: 운영체제 버전:     6.3
+8월 24, 2021 10:14:41 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: 아키텍처:          amd64
+8월 24, 2021 10:14:41 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: 자바 홈:           C:\Program Files\Java\jre1.8.0_211
+8월 24, 2021 10:14:41 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: JVM 버전:          1.8.0_211-b12
+8월 24, 2021 10:14:41 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: JVM 벤더:          Oracle Corporation
+8월 24, 2021 10:14:41 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: CATALINA_BASE:     C:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1
+8월 24, 2021 10:14:41 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: CATALINA_HOME:     C:\eGovFrameDev-3.9.0\apache-tomcat-9.0.50
+8월 24, 2021 10:14:41 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: 명령 행 아규먼트:  -Dcatalina.base=C:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1
+8월 24, 2021 10:14:41 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: 명령 행 아규먼트:  -Dcatalina.home=C:\eGovFrameDev-3.9.0\apache-tomcat-9.0.50
+8월 24, 2021 10:14:41 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: 명령 행 아규먼트:  -Dwtp.deploy=C:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps
+8월 24, 2021 10:14:41 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: 명령 행 아규먼트:  -Djava.endorsed.dirs=C:\eGovFrameDev-3.9.0\apache-tomcat-9.0.50\endorsed
+8월 24, 2021 10:14:41 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: 명령 행 아규먼트:  -Dfile.encoding=MS949
+8월 24, 2021 10:14:42 오전 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+정보: APR 버전 [1.7.0]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [1.2.30]을(를) 로드했습니다.
+8월 24, 2021 10:14:42 오전 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+정보: APR 용량정보들: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+8월 24, 2021 10:14:42 오전 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+정보: APR/OpenSSL 설정: useAprConnector [false], useOpenSSL [true]
+8월 24, 2021 10:14:42 오전 org.apache.catalina.core.AprLifecycleListener initializeSSL
+정보: OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 1.1.1k  25 Mar 2021]
+8월 24, 2021 10:14:42 오전 org.apache.coyote.AbstractProtocol init
+정보: 프로토콜 핸들러 ["http-nio-8080"]을(를) 초기화합니다.
+8월 24, 2021 10:14:42 오전 org.apache.catalina.startup.Catalina load
+정보: [1302] 밀리초 내에 서버가 초기화되었습니다.
+8월 24, 2021 10:14:42 오전 org.apache.catalina.core.StandardService startInternal
+정보: 서비스 [Catalina]을(를) 시작합니다.
+8월 24, 2021 10:14:42 오전 org.apache.catalina.core.StandardEngine startInternal
+정보: 서버 엔진을 시작합니다: [Apache Tomcat/9.0.50]
+8월 24, 2021 10:14:49 오전 org.apache.jasper.servlet.TldScanner scanJars
+정보: 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+DEBUG: com.wjthinkbig.smartall.middle.Application - [<init>:28] constructor: com.wjthinkbig.smartall.middle.Application@3152d449
+8월 24, 2021 10:14:49 오전 org.apache.catalina.core.ApplicationContext log
+정보: 1 Spring WebApplicationInitializers detected on classpath
+8월 24, 2021 10:14:49 오전 org.apache.catalina.core.ApplicationContext log
+정보: Initializing Spring root WebApplicationContext
+INFO : org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization started
+DEBUG: com.wjthinkbig.smartall.middle.Config - [<clinit>:29] user: joshua
+DEBUG: com.wjthinkbig.smartall.middle.Config - [<clinit>:30] os: Windows 8.1
+DEBUG: com.wjthinkbig.smartall.middle.Config - [<clinit>:31] host: Joanne
+DEBUG: com.wjthinkbig.smartall.middle.Config - [<clinit>:32] ip: 172.30.1.4
+DEBUG: com.wjthinkbig.smartall.middle.Config - [<clinit>:33] tmpDir: C:\Users\joshua\AppData\Local\Temp\
+INFO : com.wjthinkbig.smartall.middle.Config - [<clinit>:44] environment: LOCAL_DEV2
+DEBUG: com.wjthinkbig.smartall.middle.config.RedisSessionConfig - [<init>:16] constructor: com.wjthinkbig.smartall.middle.config.RedisSessionConfig@33f5d807
+DEBUG: com.wjthinkbig.smartall.middle.config.DbConfig - [<init>:68] constructor: com.wjthinkbig.smartall.middle.config.DbConfig$$EnhancerBySpringCGLIB$$5e7faf7c@24d998ba
+INFO : com.wjthinkbig.smartall.middle.config.DbConfig - [dataSource:93] dataSource: HikariDataSource (null)
+INFO : com.wjthinkbig.smartall.middle.config.DbConfig - [sqlSessionFactory:102] mapperLocations: URL [jar:file:/C:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/smartall-middle-web/WEB-INF/lib/smartall-middle-common-1.0-SNAPSHOT.jar!/com/wjthinkbig/smartall/middle/data/mybatis/mapper/admin.xml]
+INFO : com.wjthinkbig.smartall.middle.config.DbConfig - [sqlSessionFactory:108] dataSource: HikariDataSource (null), sqlSessionFactory: org.apache.ibatis.session.defaults.DefaultSqlSessionFactory@50061d56
+DEBUG: com.wjthinkbig.smartall.middle.config.WjServerConfig - [<init>:40] constructor: com.wjthinkbig.smartall.middle.config.WjServerConfig$$EnhancerBySpringCGLIB$$398a0534@75c8ba94
+DEBUG: com.wjthinkbig.smartall.middle.config.StorageConfig - [<init>:49] constructor: com.wjthinkbig.smartall.middle.config.StorageConfig$$EnhancerBySpringCGLIB$$873f4c67@1dc9aba0
+DEBUG: com.wjthinkbig.smartall.middle.config.MultipartConfig - [<init>:17] constructor: com.wjthinkbig.smartall.middle.config.MultipartConfig$$EnhancerBySpringCGLIB$$2c165d38@69aecbba
+DEBUG: com.wjthinkbig.smartall.middle.config.RedisConfig - [<init>:116] constructor: com.wjthinkbig.smartall.middle.config.RedisConfig$$EnhancerBySpringCGLIB$$4e9e1927@7b4268e2
+INFO : com.wjthinkbig.smartall.middle.config.DbConfig - [transactionManager:117] dataSource: HikariDataSource (null), transactionManager: org.springframework.jdbc.datasource.DataSourceTransactionManager@3a69c81e
+INFO : com.wjthinkbig.smartall.middle.config.RedisSessionConfig - [redisConnectionFactory:24] redisConnectionFactory: org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory@309e874
+WARN : org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration - Unable to obtain SessionCookieConfig: Servlet 3.0 스펙의 4.4 장에 따르면, web.xml 또는 web-fragment.xml 파일에 정의되지 않거나 @WebListener로 annotate되지 않은, ServletContextListener에서 이 메소드를 호출하는 것은 허용되지 않습니다.
+INFO : org.springframework.web.context.ContextLoader - Root WebApplicationContext initialized in 9311 ms
+DEBUG: com.bumdori.spring.filter.HttpWrappingFilter - Filter 'httpWrappingFilter' configured for use
+8월 24, 2021 10:14:59 오전 org.apache.catalina.core.ApplicationContext log
+정보: Initializing Spring DispatcherServlet 'dispatcher'
+INFO : org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+INFO : org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1889 ms
+8월 24, 2021 10:15:01 오전 org.apache.coyote.AbstractProtocol start
+정보: 프로토콜 핸들러 ["http-nio-8080"]을(를) 시작합니다.
+8월 24, 2021 10:15:01 오전 org.apache.catalina.startup.Catalina start
+정보: 서버가 [18304] 밀리초 내에 시작되었습니다.
+INFO : com.bumdori.spring.interceptor.LoggingInterceptor - [preHandle:27] [c9760b9b-e618-4cfe-9bb3-583237e92171] ==== start =====
+INFO : com.bumdori.spring.interceptor.LoggingInterceptor - [preHandle:28] [c9760b9b-e618-4cfe-9bb3-583237e92171] uri: /
+INFO : com.bumdori.spring.interceptor.LoggingInterceptor - [preHandle:32] [c9760b9b-e618-4cfe-9bb3-583237e92171] method: GET, function: root
+DEBUG: com.wjthinkbig.smartall.middle.content.imagebanner-select - ==>  Preparing: select ORIGIN.* from image_banner ORIGIN WHERE ORIGIN.cate_div = ? and ORIGIN.o_yn = ? order by o_idx 
+DEBUG: com.wjthinkbig.smartall.middle.content.imagebanner-select - ==> Parameters: 0(Integer), Y(String)
+DEBUG: com.wjthinkbig.smartall.middle.content.imagebanner-select - <==      Total: 1
+DEBUG: com.wjthinkbig.smartall.middle.storage.impl.LocalStorage - [uri:47] uri: http://localhost:8080/binary/IMAGE_BANNER/000/000/000/000/0/00/00/00/1608724823891.jpg
+DEBUG: com.wjthinkbig.smartall.middle.storage.impl.LocalStorage - [uri:47] uri: http://localhost:8080/binary/IMAGE_BANNER/000/000/000/000/0/00/00/00/1608724823891_1.jpg
+INFO : com.bumdori.spring.interceptor.LoggingInterceptor - [afterCompletion:91] [c9760b9b-e618-4cfe-9bb3-583237e92171] ==== end =====
+INFO : com.bumdori.spring.interceptor.LoggingInterceptor - [preHandle:27] [f433278f-2027-4b94-97d9-61a701962eea] ==== start =====
+INFO : com.bumdori.spring.interceptor.LoggingInterceptor - [preHandle:28] [f433278f-2027-4b94-97d9-61a701962eea] uri: /
+INFO : com.bumdori.spring.interceptor.LoggingInterceptor - [preHandle:32] [f433278f-2027-4b94-97d9-61a701962eea] method: GET, function: root
+DEBUG: com.wjthinkbig.smartall.middle.content.imagebanner-select - ==>  Preparing: select ORIGIN.* from image_banner ORIGIN WHERE ORIGIN.cate_div = ? and ORIGIN.o_yn = ? order by o_idx 
+DEBUG: com.wjthinkbig.smartall.middle.content.imagebanner-select - ==> Parameters: 0(Integer), Y(String)
+DEBUG: com.wjthinkbig.smartall.middle.content.imagebanner-select - <==      Total: 1
+DEBUG: com.wjthinkbig.smartall.middle.storage.impl.LocalStorage - [uri:47] uri: http://localhost:8080/binary/IMAGE_BANNER/000/000/000/000/0/00/00/00/1608724823891.jpg
+DEBUG: com.wjthinkbig.smartall.middle.storage.impl.LocalStorage - [uri:47] uri: http://localhost:8080/binary/IMAGE_BANNER/000/000/000/000/0/00/00/00/1608724823891_1.jpg
+INFO : com.bumdori.spring.interceptor.LoggingInterceptor - [afterCompletion:91] [f433278f-2027-4b94-97d9-61a701962eea] ==== end =====
+WARN : org.springframework.web.servlet.PageNotFound - No mapping for GET /binary/IMAGE_BANNER/000/000/000/000/0/00/00/00/1608724823891.jpg
+WARN : org.springframework.web.servlet.PageNotFound - No mapping for GET /binary/IMAGE_BANNER/000/000/000/000/0/00/00/00/1608724823891_1.jpg

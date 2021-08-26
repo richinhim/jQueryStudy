@@ -1,0 +1,41 @@
+<html>
+    <head>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+
+
+</head>
+<body>
+   
+    <!-- 전체선택 -->
+    <input type="checkbox" class="selAll" name="selChk[]" value="" /> <label for="selAll" >selAll</label><br>
+
+    <!-- 선택 리스트 -->
+    <input type='checkbox' class='selChk' onclick='clkSelChk()' name='selChk[]' value='A' /><label for="selChk_A" >selChk_A</label><br>
+    <input type='checkbox' class='selChk' onclick='clkSelChk()' name='selChk[]' value='B' /><label for="selChk_B" >selChk_B</label><br>
+    <input type='checkbox' class='selChk' onclick='clkSelChk()' name='selChk[]' value='C' /><label for="selChk_C" >selChk_C</label><br>
+    <input type='checkbox' class='selChk' onclick='clkSelChk()' name='selChk[]' value='D' /><label for="selChk_D" >selChk_D</label><br>
+
+    <script>
+     
+    
+     // https://zxchsr.tistory.com/55?category=867193
+        
+    //전체서택시 서택 리스트 모두 체크됨
+    $(".selAll").click(function() {
+
+        $(".selChk").prop('checked', this.checked);
+    });
+
+    //전체선택후 선택 리스트 하나라도 누르게 되면 전체선택 체크 해제
+    function clkSelChk(){
+
+        $(".selAll").prop("checked", false);
+    }
+        
+    $(".selChk").prop("checked", false);
+    </script>
+</body>
+</html>

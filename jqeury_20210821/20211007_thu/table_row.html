@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <!-- jQuery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <!-- bootstrap JS -->
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    
+    <!-- bootstrap CSS -->
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    
+ 
+ 
+</head>
+ 
+<body>
+ 
+    
+    <br><br>
+ 
+    <div class="row">
+        <table id="example-table-1" width="100%" class="table table-bordered table-hover text-center">
+            <thead>
+                <tr>
+                    <th>No. </th>
+                    <th>아이디</th>
+                    <th>이름</th>
+                    <th>이메일</th>
+                </tr>
+            </thead>
+            <tbody>                
+                <tr>
+                    <td>1</td>
+                    <td>user01</td>
+                    <td>홍길동</td>
+                    <td>hong@gmail.com</td>
+                    <td><input type="button" class="checkBtn" value="클릭" /></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>user02</td>
+                    <td>김사부</td>
+                    <td>kim@naver.com</td>
+                    <td><input type="button" class="checkBtn" value="클릭" /></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>user03</td>
+                    <td>존</td>
+                    <td>John@gmail.com</td>
+                    <td><input type="button" class="checkBtn" value="클릭" /></td>
+
+
+                </tr>
+            </tbody>
+        </table>
+        <div class="col-lg-12" id="ex1_Result1" ></div> 
+        <div class="col-lg-12" id="ex1_Result2" ></div> 
+    </div>
+    <br><br>
+<script>
+
+    // $("#example-table-1 tr").click(function(){
+
+    //     var str = "";
+
+    //     var tdArr = new Array();
+
+    //     //현재 클릭된 Row(<tr>)
+    //     var tr = $(this);
+    //     var td = tr.children();
+        
+    //     //tr.text()는 킬릭된 row 즉 tr에 있는 모든 값을 가져온다.
+    //     console.log('all data is clicked'+ tr.text());
+
+    //     td.each(function(i){
+
+    //         console.log(i +" : "+td.eq(i).text());
+    //         tdArr.push(td.eq(i).text());
+
+    //     });
+
+    //     console.log(tdArr);
+
+    //     var no = td.eq(0).text();
+    //     console.log(no);
+    // });
+
+    // $(".checkBtn").click(function(){
+    //     var str = "";
+    //     var tdArr = new Array();
+    //     var checkBtn = $(this);
+
+    //     var tr = checkBtn.parent().parent();
+    //     var td = tr.children();
+
+    //     console.log("data="+tr.text());
+
+    //     console.log(td.eq(0).text());
+    // });
+
+</script>
+</body>
+</html>
+<!-- 출처: https://all-record.tistory.com/172?category=782084 [세상의 모든 기록] -->

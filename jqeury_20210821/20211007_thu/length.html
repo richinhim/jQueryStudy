@@ -28,7 +28,18 @@
 
 </ul>
 <script>
-    
+    $(function() {
+
+       //var len  = $('ul.list').children().length;
+       var len = $('.list').children().length;
+       alert(len); 
+
+       $('ul.list').children().click(function(){
+            var cho = $('ul.list').children().index(this);
+            //var cho = $(this).index();
+            alert(cho);
+       });
+    });
 </script>
 </body>
 

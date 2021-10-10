@@ -1,0 +1,37 @@
+<html>
+    <head>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+
+
+</head>
+<body>
+    
+    <input type="radio" id="typeA" name="radio_name" value="A"><label for="typeA">Type A</label>
+    <input type="radio" id="typeB" name="radio_name" value="B" checked><label for="typeB">Type B</label>
+
+    <script>
+
+        
+   
+        //   https://zxchsr.tistory.com/100?category=867193
+    
+        var tmp_value = $('input:radio[name=radio_name]:checked').val();
+        
+        console.log(tmp_value);	// B
+
+        // radio_name 이라는 name을 가진 라디오 버튼 중 A라는 value 를 가지고 있는 라디오 버튼 선택/해제
+        //$('input:radio[name=radio_name]:input[value="A"]').attr("checked", true);	// 선택	
+        //$('input:radio[name=radio_name]:input[value="A"]').attr("checked", false);	// 해제
+
+        //또는
+
+        //$('input:radio[name=radio_name]:input[value="A"]').prop("checked", true);	// 선택	
+        //$('input:radio[name=radio_name]:input[value="A"]').prop("checked", false);	// 해제
+        $('input:radio[name=radio_name]:input[value="B"]').prop("checked", false);	// 해제
+        
+    </script>
+</body>
+</html>

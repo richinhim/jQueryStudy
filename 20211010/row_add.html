@@ -9,7 +9,7 @@
     <button id="addItemBtn">항목추가</button>
     <button id="delItemBtn">항목삭제</button>
     <table border="1" id="example">
-
+        <tbody>
         <tr>
 
             <th><input type="checkbox" id="chk1" name="chk1"/></th>
@@ -19,27 +19,26 @@
         </tr>
         <tr>
 
-            <td><input type="checkbox" id="chk1" name="chk1"/><td>
+            <td><input type="checkbox" id="chk11" name="chk11"/><td>
             <td>내용1</td>
             <td>내용2</td>
             <td>내용3</td>
         </tr>
-
+        </tbody>
     </table>
 </body>
 </html>    
 <script>
 
-    // $("#addItemBtn").click(
-    // );
-
+    
+    
     $("#addItemBtn").click(function(){
         var varTable = $("#example").parent().find('>table');//행 추가 테이블
         var varTableLastRow = varTable.find('tr:last');//행추가 마지막 row
         var copyRow = varTableLastRow.clone(true);
 
         //행추가 row값 초기화
-        fncRowReset(copyRow);
+        //fncRowReset(copyRow);
 
         //행추가 맨 마지막에 append
         varTable.append(copyRow);
@@ -47,47 +46,62 @@
     });
 
     $("#delItemBtn").click(function(){
-        var varTable = $("#example").parent().find('>table');      // 행삭제 table
 
-        var trCount = varTable.find('>tbody >tr').size;     // 행삭제 body row count
-
-        if(trCount == 1){
-            alert('더이상 삭제할 수 없습니다.');
+        if($('input:checkbox[name=chk11]:checked').length == 0){
+            alert('선택된 항목이 없습니다.');
             return;
         }
+        var varTable = $("#example").parent().find('>table');      // 행삭제 table
+
+        // var trCount = varTable.find('>tbody >tr').length;     // 행삭제 body row count
+
+        // if(trCount == 1){
+        //     alert('더이상 삭제할 수 없습니다.');
+        //     return;
+        // }
 
         if(confirm("선택하신 항목을 삭제하시겠습니까?")){
 
             var chkCnt = 0;
-            varTable.find('>tbody input:checkbox').each(function(idx){
-
-                    if(this.checked){
-                        var nowRowSize = varTable.find('>tbody >tr').size;
+            varTable.find('>tbody input[name=chk11]:checkbox').each(function(idx){
+                    //$("#example > tbody").children("tr:not(:first)") == true
+                    if(this.checked ){
+                        var nowRowSize = varTable.find('>tbody >tr').length;
 
                         var choiceRow = $(this).parent().parent();
                         if(nowRowSize == 1){
                                 // 마지막 row 값 초기화
                                 fncRowReset(choiceRow);    
+                                return;
                         } else {
+                                 
+                                if($("#example > tbody").children("tr:not(:first)") && nowRowSize != 2){
+                                    choiceRow.remove();                               
+                                }
+                                    
+                               
                                 // 행삭제
-                                choiceRow.remove();
+                               // choiceRow.remove();
                         }
                         chkCnt++;
                     }
             });            
 
-            if(chkCnt == 0){
-                    alert('선택된 항목이 없습니다.');
-                    return;
-            }
+            // if(chkCnt == 0){
+            //         alert('선택된 항목이 없습니다.');
+            //         return;
+            // }
         }
-        var newTrCnt = varTable.find('>tbody >tr').size;
+        var newTrCnt = varTable.find('>tbody >tr').length;
 
         // 행삭제 tr id 초기화 (순서대로)
         for(var i = 0; i < newTrCnt; i++){
             varTable.find('>tbody >tr:eq('+i+')').attr('id', i);
         }
     });
+    
+    
+    
     //행 초기화
     fncRowReset = function(obj){
         $(obj).find(':input').each(function(){
@@ -96,9 +110,11 @@
         });
     }
 
+    /*
     //행 추가
-    fncAddRow = function(){
+    fncAddRow = function(obj){
 
+        
         var varTable = $(obj).parent().find('>table');//행 추가 테이블
         var varTableLastRow = varTable.find('tr:last');//행추가 마지막 row
         var copyRow = varTableLastRow.clone(true);
@@ -113,9 +129,10 @@
     //행 삭제 
     fncDeleteRow = function(obj){
 
+        
         var varTable = $(obj).parent().find('>table');      // 행삭제 table
 
-        var trCount = varTable.find('>tbody >tr').size;     // 행삭제 body row count
+        var trCount = varTable.find('>tbody >tr').length;     // 행삭제 body row count
 
         if(trCount == 1){
             alert('더이상 삭제할 수 없습니다.');
@@ -128,12 +145,13 @@
             varTable.find('>tbody input:checkbox').each(function(idx){
 
                     if(this.checked){
-                        var nowRowSize = varTable.find('>tbody >tr').size;
+                        var nowRowSize = varTable.find('>tbody >tr').length;
 
                         var choiceRow = $(this).parent().parent();
                         if(nowRowSize == 1){
                                 // 마지막 row 값 초기화
                                 fncRowReset(choiceRow);    
+                                
                         } else {
                                 // 행삭제
                                 choiceRow.remove();
@@ -147,7 +165,7 @@
                     return;
             }
         }
-        var newTrCnt = varTable.find('>tbody >tr').size;
+        var newTrCnt = varTable.find('>tbody >tr').length;
 
         // 행삭제 tr id 초기화 (순서대로)
         for(var i = 0; i < newTrCnt; i++){
@@ -160,7 +178,7 @@
 
             var varTable = $(obj).parent().find('>table');      // 행삭제 table
 
-            var trCount = varTable.find('>tbody >tr').size;     // 행삭제 body row count
+            var trCount = varTable.find('>tbody >tr').length;     // 행삭제 body row count
 
             if(trCount == 1){
 
@@ -180,7 +198,7 @@
 
                         if(this.checked){
 
-                              var nowRowSize = varTable.find('>tbody >tr').size;
+                              var nowRowSize = varTable.find('>tbody >tr').length;
 
                               var choiceRow = $(this).parent().parent();
 
@@ -218,7 +236,7 @@
 
             
 
-            var newTrCnt = varTable.find('>tbody >tr').size;
+            var newTrCnt = varTable.find('>tbody >tr').length;
 
             
 
@@ -245,4 +263,28 @@
                 this.checked = chkYn;
             });
       };
+
+      $('#chk1').click(function(){
+        var chkAll = $(this);
+            var varTable = chkAll.parent().parent().parent().parent();            
+
+            var chkYn = this.checked;            
+
+            varTable.find('>tbody input:checkbox').each(function(idx){
+                this.checked = chkYn;
+            });
+      });
+      */
+      $('#chk1').click(function(){
+
+        
+        var chkAll = $(this);
+            var varTable = chkAll.parent().parent().parent().parent();            
+
+            var chkYn = this.checked;            
+
+            varTable.find('>tbody input:checkbox').each(function(idx){
+                this.checked = chkYn;
+            });
+      });
 </script>

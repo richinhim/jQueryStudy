@@ -1,0 +1,56 @@
+<html>
+    <body>
+     <!-- jQuery  -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+           
+    <!-- <input type="button" id="addItemBtn" name="" >행추가</input>
+
+    <input type="button" id="" name="">행삭제</input> -->
+    <button id="addItemBtn">항목추가</button>
+    <button id="delItemBtn">항목삭제</button>
+    <table border="1" id="example">
+        <tbody>
+        <tr>
+
+            <th><input type="checkbox" id="chk1" name="chk1"/></th>
+            <th>헤더1</th>
+            <th>헤더2</th>
+            <th>헤더3</th>
+        </tr>
+        <tr>
+
+            <td><input type="checkbox" id="chk11" name="chk11"/><td>
+            <td>내용1</td>
+            <td>내용2</td>
+            <td>내용3</td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>    
+<script>
+
+    //일반함수
+    function hello(name){
+        alert(name + "님 환영합니다.");
+    }
+
+    hello("lee");
+    
+    //객체방식
+    var hello2 = new Function("name", "alert(name+'님 환영합니다')");
+
+    hello2("lee2");
+
+    //리터럴방식 함수
+    var hello = function(name){
+        alert(name + "님 환영합니다");
+    }
+
+    hello("lee3");
+
+
+
+
+    //https://moo-you.tistory.com/129 함수 리터럴
+</script>

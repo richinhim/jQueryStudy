@@ -1,0 +1,30 @@
+<html>
+    <body>
+     <!-- jQuery  -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script>
+
+        //익명함수 버전 
+        
+         var i = 0;
+         var $info = null;
+
+         $(function(){
+            $hello = $("#hello");
+
+            $hello.append("<p>"+ i +"안녕하세요</p>");
+            i++;
+
+            $("#btn").click(function(){
+                $hello.append("<p>"+ i +"안녕하세요</p>");
+                i++;
+            });
+         });
+
+
+     </script>           
+     <button id="btn">Click</button>            
+     <div id="hello"></div>
+     </body>
+</html>
+<!-- https://moo-you.tistory.com/129 -->

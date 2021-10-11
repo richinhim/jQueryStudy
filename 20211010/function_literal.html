@@ -8,6 +8,7 @@
     <input type="button" id="" name="">행삭제</input> -->
     <button id="addItemBtn">항목추가</button>
     <button id="delItemBtn">항목삭제</button>
+    <button id="btnStart">시작</button>
     <table border="1" id="example">
         <tbody>
         <tr>
@@ -49,7 +50,26 @@
 
     hello("lee3");
 
+    //익명함수- 함수 리터럴 방식으로 만들어진 이름 없는 함수
 
+    //익명 함수 활용전
+    $(function(){
+
+        function hello(){
+            alert('안녕하세요. 환영합니다');            
+        }
+
+        //$("#btnStart").click(hello);
+    });
+
+    //익명함수 활용후 
+    $(function(){
+
+        $("#btnStart").click( function(){
+
+            alert('hi, hello');
+        });
+    });
 
 
     //https://moo-you.tistory.com/129 함수 리터럴

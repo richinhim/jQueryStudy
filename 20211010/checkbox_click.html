@@ -1,0 +1,60 @@
+
+<html>
+
+    <head>
+        <title>checkbox</title>
+        <style>.selected{text-decoration:line-through;font-weight:700;color:red}</style> 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+
+    $(function(){
+
+        $('input:checkbox').on('click', function(){
+
+            if($(this).prop('checked')){
+
+                $(this).parent().addClass('selected');
+            }else{
+
+                $(this).parent().removeClass('selected');
+            }
+        });
+    });
+
+    // https://cocosoft.kr/397 
+ // 체크박스가 클릭되었을 때 체크상태이면 부모 즉 현재는 <p> 태그겠죠?
+
+ // <p>태그에 selcted 클래스를 추가하고 아니면 삭제하라라는 의미입니다.
+
+
+
+//  출처: https://cocosoft.kr/397 [코코소프트]
+    </script>
+<body>
+    <p> 
+        
+        <input type="checkbox" id="test-1"> 
+        <label for="test-1">체크박스를 체크 또는 라벨(이 문구)을 클릭시 글자가 변합니다.</label> 
+
+    </p>
+
+    <!-- <table border="1"> 
+        <tbody> 
+            <tr> 
+                <td><p>1행1열 -체크박스-</p></td> 
+                <td><p>1행2열</p></td> 
+            </tr> 
+            <tr> 
+                <td><p>2행1열</p></td> 
+                <td><p>2행2열 -체크박스-</p></td> 
+            </tr> 
+        </tbody> 
+    </table> -->
+
+
+</body>
+
+    
+
+
+</html>

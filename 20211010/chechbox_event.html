@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <title>checkbox</title>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+    $(function(){
+
+        $('#checkBoxId').change(function(){
+
+            if($(this).is(":checked")){
+            //if($('#checkBoxId').is(":checked")){    
+
+                alert("checked");
+            }else{
+                alert("not checked");
+            }
+        });
+        
+    });
+
+    //https://ranidiant.tistory.com/40
+
+    // 전체 갯수
+    $("input:checkbox[name=is_check]").length
+    
+    // 선택된 갯수
+    $("input:checkbox[name=is_check]:checked").length
+    
+    // 전체 체크
+    $("input[name=mycheck]:checkbox").prop("checked", true);
+    
+    // 전체 체크 순회
+    $("input:checkbox[name=is_check]").each(function() {
+    this.checked = true;
+    });
+    
+    // 체크여부 확인
+    if($("input:checkbox[name=complete_yn]").is(":checked") == true) {
+    //작업
+    }
+ 
+ 
+//  출처: https://ranidiant.tistory.com/40 [다람쥐 코드]
+    
+</script>
+</head>
+
+<body>
+
+    <input type="checkbox" name="is_check" id="checkBoxId"/> 1<br>
+    <input type="checkbox" name="mycheck" />                 2<br>
+    <input type="checkbox" name="complete_yn" /> 3
+    <b></b>
+
+</body>
+</html>

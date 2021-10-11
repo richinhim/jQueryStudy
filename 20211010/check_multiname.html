@@ -1,0 +1,43 @@
+<html>
+    <head>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+
+
+</head>
+<body>
+    <!-- checkbox 체크(checked) 여부 - 단일 -->
+    <input type='checkbox' name='tmpChkbox[]' value='A' checked>
+    <input type='checkbox' name='tmpChkbox[]' value='B' checked>
+    <input type='checkbox' name='tmpChkbox[]' value='C'>
+    <script>
+
+       // $(function(){
+    
+           // 1. 해당 name과 동일한 모든 체크박스 루프 > 체크된 체크박스만 해당 value 값 콘솔
+    
+        //    $("input[name='tmpChkbox[]']").each(function(){
+        //         if( $(this).is(":checked") == true ){
+        //         var tmpVal = $(this).val();
+        //         console.log(tmpVal);
+        //         }
+        //     });
+    
+           // 2. 해당 name과 동일한 체크박스 중 선택한 것들만 루프 > 해당 value 값 콘솔
+        //    $("input[name='tmpChkbox[]']:checked").each(function() {
+        //         var tmpVal = $(this).val();
+        //         console.log(tmpVal);
+        //     });
+    
+        //});
+    
+        //https://zxchsr.tistory.com/88
+    
+        category = "tmpChkbox";
+        var tmpCnt = $("input[name='"+ category +"[]']:checked").length;
+        console.log(tmpCnt);
+    </script>
+</body>
+</html>

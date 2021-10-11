@@ -1,0 +1,287 @@
+
+<!--
+
+
+/*옵션 입력*/
+ $(document).on('click','#optionMakeTable', function(){
+	 
+ 		var _return = true ;
+	 	$(".input.optionName").each(function(){
+	        if($(this).val().trim() == ''){
+	        	alert('옵션명 입력이 빠져 있습니다.');
+	        	$(this).focus();
+	        	_return = false ;
+	        	return false;
+	        }
+	        if($(this).parent().find('input[name=optionKinds]').val().trim() == ''){
+	        	alert('옵션값  입력이 빠져 있습니다.');
+	        	$(this).parent().find('input[name=optionKinds]').focus();
+	        	_return = false ;
+	        	return false;
+	        	
+	        }
+	        
+	    })	
+
+	    if(!_return ){return; }
+	    
+	 	var html = "";
+	    var title = "";
+	    var html2 = "";
+	    var td = "";
+	    var table ="";
+	    var tableTr="";
+	    var cols = "";
+	    var size ="";
+	    var name = new Array();
+	    var Kinds = [];
+	    var optionKinds ="";
+	    var FF = "";
+	    var undefinedTD="";
+	    // var n ;
+	    // 
+	    var optionTD1 ="" , optionTD2 ="", optionTD3 ="", optionTD4 ="", optionTD5 ="";
+
+	    var opN = $('.optionWrap .option').length;
+
+	    $('.optionWrap .option input[name=optionName]').each(function(){
+	       // var name = $(this).val();
+	        name.push($(this).val())
+
+	    })
+
+	    $.each($(".optionWrap .option input[name=optionKinds]"),function(k,v) {
+	    	Kinds[Kinds.length] = $(v).val().split(',');
+		});
+	    var first;
+	    var second;
+	   
+	    function allPossibleCases(arr) {
+		    if (arr.length === 0) {
+		    	console.log("dd1");
+		    	return [];
+		    } 
+		    else if (arr.length ===1){
+		    	console.log("dd2");
+		    	return arr[0];
+		    }
+		    else {
+		    	
+		    	console.log("dd");
+		          var result = [];
+		        var allCasesOfRest = allPossibleCases(arr.slice(1));  // recur with the rest of array
+		        
+		            for (var i = 0; i < arr[0].length; i++) {
+		                for (var c in allCasesOfRest) {
+		                result.push([arr[0][i] +"@" + allCasesOfRest[c] ]);
+		            }	            
+		        }	            
+		          return result;
+		    }
+	    }
+	    var r = allPossibleCases(Kinds);
+	    var max = 1;
+	    for(var i=0; i<(opN); i++){
+	        max = parseInt(max) * parseInt(Kinds[i].length);
+	    }
+	   
+	    for(var i=0;i<opN;i++){
+	            cols = '<col width="120">';
+	            size = size + cols;	                    
+	            optionTD1 = '<td>'+name[i]+'<input type="hidden" name="option_type_title'+(i+1)+'" value="'+name[i] +'"/> </td>'
+	            html = html + optionTD1;
+	    }
+
+	    var n = -1;
+	    for(var j=0; j<(max); j++){
+	        var optionTD2 = "";
+	        var td = "";
+
+	        for(var i=0; i<(opN); i++){	        
+		        var tdval = Kinds[i][j];	    
+		        if( tdval == undefined){ tdval = "" };
+		            n++;           
+		          var D =  new String(r[j]).split('@');
+		            optionKinds = '<td class="option-data">'+'<input type="text" rulename="옵션값을" class="input" name="product_option_list['+ j +'].option_data' +(i+1)+ '" value="'+ D[i]  +'"/> </td>'
+		            			 
+		            			 td = td + optionKinds;
+		            			 
+	        }
+	        td = td	        
+	         +'<td class="option-count"><input type="text" class="input tar stock " name="product_option_list[' + j +'].option_product_count"  value="0"/></td>'
+			 +'<td class="option-price"><input type="text" class="input tar"  name="product_option_list[' + j +'].option_price" value="0"/></td>'
+			 +'<td class="use"><input type="text"  name="product_option_list[' + j +'].option_use_yn" value="Y" style="border:0;text-align: center;background-color:#f7f7f7;width:68px" readonly /></td>';
+			
+	        
+	        optionTD2 = 
+	            '<tr>'
+	            +' <td class="">'
+	            +'        <div class="checkbox">'
+	            +'            <input type="checkbox" id="choice'+j+'" name="choice"><label for="choice'+j+'"></label>'
+	            +'       </div>'
+	            +'    </td>'
+	            + 		td
+	            +'    <td class="delete"><a href="javascript:void(0)" class="delete_btn" onclick="deleteOption($(this).parent().parent())"><img src="/images/icons/new/icon_delete.png" alt="삭제"></a></td>'
+	            +'</tr>';
+
+	        html2 = html2 + optionTD2;
+	    }
+
+	    table = 
+			   '<table cellpadding=0 cellspacing=0 class="table innerTable innerTable2 optionTable">'
+			   +'     <colgroup>'
+			   +'         <col width="40">'
+			   + 				size
+			   +'          <col width="150">'
+			   // +'          <col width="150">'
+			   +'          <col width="150">'
+			   +'          <col width="85">'
+			   +'          <col width="80">'
+			   +'     </colgroup>'
+			   +'      <tr>'
+			   +'         <th colspan="'+(opN+1)+'">일괄적용</th>'
+			   +'         <th>'
+			   +'             <input type="text" id="stock-count" class="inut"><!----><a href="javascript:void(0);" onclick="setAllStockCount($(\'#stock-count\').val())" class="batch_btn batch_btn1 stock_btn"><img src="/images/icons/new/arrow2.png" alt=""></a>'
+			   +'         </th>'
+			   
+			   /* +'         <th>'
+			   +'             <input type="text" id="sale-count" class="inut"><!----><a href="javascript:void(0);" onclick="setAllSaleCount($(\'#sale-count\').val())"  class="batch_btn batch_btn2 sales_btn"><img src="/images/icons/new/arrow2.png" alt=""></a>'
+			   +'         </th>' */
+			   
+			   +'		  <th rowspan=3>추가옵션가</th>'
+			   +'         <th rowspan=3>사용여부</th>'
+			   +'         <th rowspan=3>삭제</th>'
+			   +'     </tr>'
+			   +'     <tr>'
+			   +'         <th rowspan="2">'
+			   +'             <div class="checkbox">'
+			   +'                 <input type="checkbox" id="choiceAll" name="choice" class="all" onclick="\choiceAllOption($(\'#choiceAll\').is(\':checked\'))\" /><label for="choiceAll"></label>'
+			   +'             </div>'
+			   +'         </th>'
+			   +'         <th colspan="'+opN+'" >옵션명 <input type="hidden" name="option_count" id="option-title-count" value='+ opN +' /></th>'
+			   +'         <th rowspan="2">재고</th>'
+			   // +'         <th rowspan="2">판매수</th>'
+			   +'     </tr>'
+			   +'     <tr>'
+			   +        html
+			   +'     </tr>'
+			   +	html2
+			   +' </table>'
+
+	    $('.innertableWrap').html(table);
+	    $(this).parent('div').next('.option_Add2').show();
+	});
+	
+	/* $(document).on('click', '.optionMakeTable', function(e){
+	    e.preventDefault();
+	    $(this).parent('div').next('.option_Add2').toggle();
+	}) */
+ 
+	$('#product_option_yn input[name=option_yn]').each(function(){
+          $(this).on('change' ,function(){
+               // console.log($(this).val() + "@@")
+              if( $("input#option[name=option_yn]").prop('checked') == false ){
+                  console.log('1')
+                  $('.option_No').show();
+                  $('.option_No input').attr( 'disabled', false );
+                  $('.option_Add1').hide();
+                  $('.option_Add1 input,.option_Add1 select').attr( 'disabled', true );
+
+              }else{
+            	  optionNoDisabled();
+              } 
+          })
+	})
+
+
+	
+    $('input[name=option_add]').each(function(){
+        $(this).on('change' ,function(){
+            // console.log($(this).find('option').val() + "@@")
+            if( $("input#option_add[name=option_add]").prop('checked') == false ){
+                $('.option_Add21').hide();
+
+            }else{
+                $('.option_Add21').show();
+            } 
+        })
+    })
+
+    $('input[name=option_input]').each(function(){
+        $(this).on('change' ,function(){
+            // console.log($(this).find('option').val() + "@@")
+            if( $("input#option_input[name=option_input]").prop('checked') == false ){
+                $('.option_Add31').hide();
+
+            }else{
+                $('.option_Add31').show();
+            } 
+        })
+    })
+
+	//옵션 만들기 
+	var optionN = 2;
+   $(document).on('click','#optionMake', function(e){
+     	e.preventDefault();
+     	console.log('1')
+     	var input = ""
+	    optionN++;    
+	    input = 
+	        	'<div class="option">'
+				// 200401 수정
+	           +'<input type="text" id="optionName'+optionN+'" name="optionName" class="input optionName" value="" placeholder="예시 : 컬러">'
+	           +'<input type="text" name ="optionKinds" id="optionKinds'+optionN+'" class="input optionKinds" value="" placeholder="예시 : 빨강, 노랑 (  , 로 구분 )">'
+	           +' 	<a href="javascript:void(0)" onclick="makeOptionRemove(this);" class="reset"><img src="/images/icons/new/reset.png" alt=""></a>'
+	           +'</div>';
+	
+	    $('.optionWrap .option:last').after(input);
+	    var opN = $('.optionWrap .option').length;
+	
+	    if( opN == 5){
+	        $('#optionMake').hide();
+	    }else{	        
+	        $('#optionMake').show();
+	    }
+	 });
+	 
+//옵션 입력 리셋
+	$(document).on('click', '.option #reset', function(e){
+	    e.preventDefault();
+	   
+	    var opN = $('.optionWrap .option').length;
+	    if( opN == 1){
+	       alert('최소 한개 이상의 옵션이 필요합니다.');
+	       return;
+	    }
+	    
+	    $(this).parents('.option').remove();
+
+	    if( opN == 6){
+	        $('.optionMake').hide();
+	    }else{
+	        $('.optionMake').show();      
+	    }
+	
+	});
+ 
+	var $removeItem;
+	var child_product_window;
+	function product_popup(target){		
+		$removeItem =$(target);
+		var popUrl = "../product/product_popup_list.do?option_yn=N";	//팝업창에 출력될 페이지 URL
+		var popOption = "width=900, height=800, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
+		child_product_window =	window.open(popUrl,"product_popup",popOption);
+	}
+
+	function add_package_product(){
+		var new_package_product = '<tr style="display:none"></tr>';
+		var $new_package_el = $.parseHTML(new_package_product);
+		$("#packageTable").append($new_package_el);
+		product_popup($new_package_el);
+	}
+	
+
+	 
+
+
+-->

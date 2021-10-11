@@ -1,0 +1,40 @@
+<html>
+
+
+<style>
+    thead { background-color: skyblue; }
+    </style>
+<body>
+    <button id='btn-add-row'>행 추가하기</button>
+    <button id='btn-delete-row'>행 삭제하기</button>
+    <hr>
+    
+    <table id="mytable" border="1" cellspacing="0">
+      <thead>
+        <tr>
+          <th>ITEM</th>
+          <th>DATETIME</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    
+    <!-- jQuery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script>
+        
+        $("#btn-add-row").click(function(){
+            var time = new Date().toLocaleDateString();
+            
+            $("#mytable > tbody:last").append('<tr><td>Hello World</td><td>'+ time + '</td><></tr>');
+        });
+
+        $("#btn-delete-row").click(function(){
+            $("#mytable > tbody > tr:last").remove();
+        });
+       
+        
+    </script>
+    </body>
+    </html>

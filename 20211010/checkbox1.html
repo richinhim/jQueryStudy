@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title>checkbox</title>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+    $(function(){
+
+        if($('input').is(':checked') == true){
+            $('b').text('체크된 상태');
+        }else{
+            $('b').text('체크되지 않은 상태');
+        }
+
+        $('input').change(function(){
+
+            if($('input').is(':checked') == true){
+                $('b').text('체크된 상태');
+            }else{
+                $('b').text('체크되지 않은 상태');
+            }
+        });
+    });
+
+    
+//https://www.everdevel.com/jQuery/checkbox-isChecked/
+
+//https://zero-gravity.tistory.com/244
+</script>
+</head>
+
+<body>
+
+    <input type="checkbox" onclick="handleClick(this);"/>
+    <b></b>
+
+</body>
+</html>

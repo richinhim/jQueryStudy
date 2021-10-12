@@ -1,0 +1,47 @@
+    <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </head>
+    <body>
+    <!-- jQuery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+
+        /*
+
+         클릭이벤트           단순하게 정적페이지에 로드된 요소에 클릭 이벤트를 처리하고자 할때 사용, 동적 처리가 불가능
+         */
+
+        $(function (){
+
+
+            $("button[name='save']").click(function (){
+
+                $('body').append('click!!!<br/>');
+            });
+
+            // $(document).on('click', 'button[name="add"]', function (){
+            //
+            //     $("body").append("<button name='add'>+</button>");
+            // });
+
+            $("button[name='add']").on("click", function () {
+                $("body").append("<button name='add'>+</button>");
+            });
+
+        });
+
+
+
+        // $(document).ready(function () {
+        //     $(document).on("click", "button[name='add']", function () {
+        //         $("body").append("<button name='add'>+</button>");
+        //     });
+        // });
+
+
+    </script>
+    <button name='save'>저장</button> <br>
+    <button name='add'>+</button> <br>
+    </body>
+    </html>

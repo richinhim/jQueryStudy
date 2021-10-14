@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<!-- jQuery  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+
+
+
+    $(function (){
+
+        //radio 값 체크하기
+        $('input:radio[name="radioValue"]:input[value="02"]').prop("checked", true);
+
+        $("#checkRadio").click(function (){
+
+            //체크된 radio value값 가져오기
+            var temp = $('input:radio[name="radioValue"]:checked').val();
+
+           // alert(temp);
+
+            //1. checkbox checked 여부 : id인 경우
+            if($('input:checkbox[id="checkboxValue1"]').is(":checked")== true){
+                alert("checked")
+            }else{
+                alert("unchecked")
+            }
+
+            //name인 경우
+            if($('input:checkbox[name="checkboxValue"]').is(":checked") == true){
+                alert("checked");
+            }else {
+                alert("uncheked");
+            }
+
+        });
+
+
+
+
+    });
+</script>
+A<input type="radio" name="radioValue" value="01" checked="checked"/>
+
+B<input type="radio" name="radioValue" value="02"/> <br/>
+
+A<input type="checkbox" name="checkboxValue" id="checkboxValue1" value="01" checked="checked"/>
+
+B<input type="checkbox" name="checkboxValue" id="checkboxValue2" value="02"/>
+<br/>
+
+<button id="checkRadio">click</button>
+</body>
+</html>
+
+<!--
+https://rubberduck-debug.tistory.com/95
+-->

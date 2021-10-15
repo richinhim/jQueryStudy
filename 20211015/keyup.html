@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+
+    $(function(){
+
+        $( "#in" ).keyup(function(e) {
+            alert( "Handler for .keyup() called." + e.keyCode );
+        });
+        // $("#click").click(function(){
+        //     alert("aaa");
+        // });
+
+
+        // $(this).on("click","#click", function(){
+        //     alert("aaa");
+        // });
+    });
+
+    // $(function () {
+    //     $("#click").click(function (){
+    //         alert("click");
+    //     });
+
+    //     // $("#in").onkeyup(function (event){
+
+    //     //     alert(event.keyCode);
+    //     // });
+
+
+    // });
+
+    // $(document).ready(function() {
+    //     $("#id").on("keyup", function() {
+    //         $(this).val($(this).val().replace(/[^0-9-]/g,""));
+    //     });
+    //     // $(this).on("keyup","#in", function() {
+    //     //     $(this).val($(this).val().replace(/[^0-9-]/g,""));
+    //     // });
+    //
+    //
+    //
+    // });
+
+
+    //
+    //
+    // $( "#target" ).keyup(function() {
+    //     alert( "Handler for .keyup() called." );
+    // });
+
+    // $(document).on('keyup', '#in', function() {
+    //     alert( "Handler for .keyup() called." );
+    // });
+
+
+    // 출처: https://dororongju.tistory.com/91 [웹 개발 메모장]
+
+</script>
+<body>
+Input: <input type="text" id="in" name="id">
+Output: <input type="text" id="out" name="out"> <br/>
+
+<input id="target" type="text" value="Hello there">
+<button id="click">click</button>
+
+</body>
+</html>

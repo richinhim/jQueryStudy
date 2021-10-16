@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+
+$(function (){
+
+    //radio 값 체크하기
+    $('input:radio[name="radioValue"]:input[value="02"]').prop("checked", true);
+
+
+    $('#clickBtn').click(function (){
+
+        //체크된 값 가져오기
+        var tmp = $('input:radio[name="radioValue"]:checked').val();
+
+        alert('tmp=='+ tmp);
+
+
+    });
+
+    $('#checkboxBtn').click(function (){
+
+        //checkbox checked 여부/ id
+        if($('input:checkbox[id="checkValue1"]').is(":checked") == true){
+
+            alert("checked = " + $('input:checkbox[id="checkValue1"]').val());
+
+        }else{
+            alert("unchecked")
+        }
+
+        //checkbox checked 여부 / name
+        if($('input:checkbox[name="checkValue"]').is(":checked") == true){
+            alert('name => checked = ' + $('input:checkbox[name="checkValue"]').val());
+        }else{
+            alert('name => unchecked');
+        }
+
+        if($('input[name="checkValue"]').is(":checked") == true){
+            alert('name => checked = ' + $('input[name="checkValue"]').val());
+        }
+
+
+
+
+    });
+
+    // checkbox 전체 갯수 - 체크된 갯수
+    $('#allBtn').click(function (){
+        alert("all checkbox cnt = "+ $('input:checkbox[name="checkValue"]').length);
+        alert("checked cnt = "+ $('input:checkbox[name="checkValue"]:checked').length);
+    });
+
+    //전체순회하며 처리
+    $('input:checkbox[name="checkValue"]').each(function (i){
+
+       this.checked = true; //checked 처리
+
+        if(this.checked) {// checked 처리된 항목의 값
+            //alert( i+ " = value = "+ this.value);
+        }
+    });
+
+    //check 전체 순회하며 값을 비교하여 checked 처리
+
+    $('input:checkbox[name="checkValue"]').each(function (i){
+
+        if(this.value == "E"){
+
+            this.checked = false; //unchecked 처리
+        }
+    });
+
+
+
+
+});
+
+
+
+</script>
+<body>
+A<input type="radio" name="radioValue" value="01" checked="checked"/>
+
+B<input type="radio" name="radioValue" value="02"/> <br/><br/>
+
+C<input type="checkbox" name="checkValue" id="checkValue1" value="C" checked="checked"/>
+D<input type="checkbox" name="checkValue" id="checkValue2" value="D"/>
+E<input type="checkbox" name="checkValue" id="checkValue3" value="E"/><br/><br/>
+
+<button id="clickBtn">radio</button>
+<button id="checkboxBtn">CheckBox</button>
+<button id="allBtn">AllBox</button>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+
+    $(function(){
+
+        $(".addOption").click(function(){
+            //item의 최대 번호 구하기
+            var lastItemNo = $('#listTable tr:last').attr("class").replace("item","");
+
+            var newitem = $('#listTable tr:eq(1)').clone();
+
+            //newitem.removeClass();
+            // newitem.find("td:eq(0)").attr("rowspan","1");
+            //alert((parseInt(lastItemNo)+1));
+            //newitem.addClass("item"+(parseInt(lastItemNo)+1));
+
+            $("#listTable").append(newitem);
+        });
+
+        $(".table_delete").click(function(){
+
+            alert("delete");
+
+
+            var clickedRow = $(this).parent().parent(); //tr
+
+            //var cls = clickedRow.attr("class");
+
+            //각 항목의 첫번째 row를 삭제한 경우 다음 row에 td하나를 추가해 준다
+
+            /*
+
+            if(clickedRow.find("td:eq(0)").attr("item")){
+                if(clickedRow.next().hasClass(cls)){
+                    clickedRow.next().prepend(clickedRow.find("td:eq(0)"));
+                }
+            }
+            */
+
+
+            if($("#listTable tr").length != 2){
+                clickedRow.remove();
+            }else{
+                alert("더이상 삭제할수 없습니다.");
+            }
+        });
+
+
+    });
+</script>
+<body>
+<div class="tableControl2">
+    <a href="#" class="btn3 btn3_blue choice_delete addOption">항목추가</a>
+</div>
+<table class="table table-type1 batchChkTable" id="listTable">
+
+    <colgroup>
+        <col width="150">
+        <col width="200">
+        <col width="150">
+        <col width="200">
+        <col width="60">
+    </colgroup>
+    <tbody>
+    <tr>
+
+        <th  class="hr-table-td">
+            항목
+        </th>
+        <th  class="hr-table-td">
+            내용
+        </th>
+        <th  class="hr-table-td">
+            항목
+        </th>
+        <th  class="hr-table-td">
+            내용
+        </th>
+        <th  class="hr-table-td">
+            삭제
+        </th>
+
+    </tr>
+    <tr class="item1">
+
+        <td  class="hr-table-td">
+            <input type="text" class="input w100p" id="essen_opt_nm3" name="essen_opt_nm" value="" >
+        </td>
+        <td  class="hr-table-td">
+            <input type="text" class="input w100p" id="essen_opt_cont3" name="essen_opt_cont" value="" >
+        </td>
+        <td  class="hr-table-td">
+            <input type="text" class="input w100p" id="essen_opt_nm4" name="essen_opt_nm" value="" >
+        </td>
+        <td  class="hr-table-td">
+            <input type="text" class="input w100p" id="essen_opt_cont4" name="essen_opt_cont" value="" >
+        </td>
+        <td>
+            <a  class="table_delete">
+                <img src="./cross_gray.png" alt="삭제">
+            </a>
+        </td>
+    </tr>
+
+    <tr class="item2">
+
+        <td  class="hr-table-td">
+            <input type="text" class="input w100p" id="essen_opt_nm5" name="essen_opt_nm" value="" >
+        </td>
+        <td  class="hr-table-td">
+            <input type="text" class="input w100p" id="essen_opt_cont5" name="essen_opt_cont" value="" >
+        </td>
+        <td  class="hr-table-td">
+            <input type="text" class="input w100p" id="essen_opt_nm6" name="essen_opt_nm" value="" >
+        </td>
+        <td  class="hr-table-td">
+            <input type="text" class="input w100p" id="essen_opt_cont6" name="essen_opt_cont" value="" >
+        </td>
+        <td>
+            <a  class="table_delete">
+                <img src="./cross_gray.png" alt="삭제">
+            </a>
+        </td>
+    </tr>
+    <tr class="item3">
+
+        <td  class="hr-table-td">
+            <input type="text" class="input w100p" id="essen_opt_nm7" name="essen_opt_nm" value="" >
+        </td>
+        <td  class="hr-table-td">
+            <input type="text" class="input w100p" id="essen_opt_cont7" name="essen_opt_cont" value="" >
+        </td>
+        <td  class="hr-table-td">
+            <input type="text" class="input w100p" id="essen_opt_nm8" name="essen_opt_nm" value="" >
+        </td>
+        <td  class="hr-table-td">
+            <input type="text" class="input w100p" id="essen_opt_cont8" name="essen_opt_cont" value="" >
+        </td>
+        <td>
+            <a  class="table_delete">
+                <img src="./cross_gray.png" alt="삭제">
+            </a>
+        </td>
+    </tr>
+    <tr class="item4">
+
+        <td  class="hr-table-td">
+            <input type="text" class="input w100p" id="essen_opt_nm9" name="essen_opt_nm" value="" >
+        </td>
+        <td  class="hr-table-td">
+            <input type="text" class="input w100p" id="essen_opt_cont9" name="essen_opt_cont" value="" >
+        </td>
+        <td  class="hr-table-td">
+            <input type="text" class="input w100p" id="essen_opt_nm10" name="essen_opt_nm" value="" >
+        </td>
+        <td  class="hr-table-td">
+            <input type="text" class="input w100p" id="essen_opt_cont10" name="essen_opt_cont" value="" >
+        </td>
+        <td>
+
+            <a  class="table_delete">
+                <img src="./cross_gray.png" alt="삭제">
+            </a>
+
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+</div>
+</body>
+</html>

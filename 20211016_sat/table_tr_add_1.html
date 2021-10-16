@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+
+        $(function (){
+
+            $("#addTR").click(function (){
+
+                //var k = $("#table tr").length;
+                var lastItemNo =$('#table tr:last').attr("class").replace("item","");
+                //alert("k="+ k)
+                //var l = k + 1;
+                var row = parseInt(lastItemNo)+2;
+                var odd  = row + 1;
+                //var even = lastItemNo + 1;
+                var rowTr = "<tr class='item"+row+"'>";
+                    rowTr += "<td><input type='text' name='opt' id='opt"+ row +"' value='' /></td>";
+                    rowTr += "<td><input type='text' name='cont' id='cont"+ row+"'' value='' /></td>";
+                    rowTr += "<td><input type='text' name='opt' id='opt"+ odd+"'' value='' /></td>";
+                    rowTr += "<td><input type='text' name='cont' id='cont"+ odd +"'' value='' /></td>";
+                    rowTr += "<td><img src='cross_gray.png' alt='삭제'></td>";
+                    rowTr += "</tr>";
+
+                $("#table").append(rowTr); //1, 1, 1, 2,2
+
+            });
+
+            $("#table").on("click", "img", function (){
+               $(this).closest("tr").remove();
+            });
+        });
+</script>
+
+<body>
+
+<button id="addTR">날 누르면 추가가 됨</button>
+<table id="table" border="1">
+    <tr class='item0'>
+        <th  class="hr-table-td">
+            항목
+        </th>
+        <th  class="hr-table-td">
+            내용
+        </th>
+        <th  class="hr-table-td">
+            항목
+        </th>
+        <th  class="hr-table-td">
+            내용
+        </th>
+        <th  class="hr-table-td">
+            삭제
+        </th>
+    </tr>
+</table>
+
+
+<!--
+https://ninedc.tistory.com/14
+
+http://nyaongnyaong.com/1147
+
+
+-->
+</body>
+</html>

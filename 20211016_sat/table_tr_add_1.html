@@ -13,11 +13,10 @@
 
                 //var k = $("#table tr").length;
                 var lastItemNo =$('#table tr:last').attr("class").replace("item","");
-                //alert("k="+ k)
-                //var l = k + 1;
+
                 var row = parseInt(lastItemNo)+2;
                 var odd  = row + 1;
-                //var even = lastItemNo + 1;
+
                 var rowTr = "<tr class='item"+row+"'>";
                     rowTr += "<td><input type='text' name='opt' id='opt"+ row +"' value='' /></td>";
                     rowTr += "<td><input type='text' name='cont' id='cont"+ row+"'' value='' /></td>";
@@ -62,9 +61,6 @@
 
 <!--
 https://ninedc.tistory.com/14
-
-http://nyaongnyaong.com/1147
-
 
 -->
 </body>

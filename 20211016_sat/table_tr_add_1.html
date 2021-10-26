@@ -30,14 +30,171 @@
             });
 
             $("#table").on("click", "img", function (){
-               $(this).closest("tr").remove();
+                $(this).closest("tr").remove();
             });
+
+            $("#jsonValue").on("click",  function (){
+                setSetting_info();
+            });
+
+            $("#jsonParse").on("click",  function (){
+                jsonParse();
+            });
+
+            function jsonParse(){
+                var jsonData = '[{"name":"apple","value":"1"},{"name":"google","value":"2"},{"name":"samsung","value":"3"},{"name":"lg","value":"4"}]';
+
+                //console.log(Object.keys(jsonData).length);
+
+                var json_data_info = '';
+
+
+                //
+                //
+                // var rowTr = "<tr class='item"+row+"'>";
+                // rowTr += "<td><input type='text' name='opt' id='opt"+ row +"' value='' /></td>";
+                // rowTr += "<td><input type='text' name='cont' id='cont"+ row+"'' value='' /></td>";
+                // rowTr += "<td><input type='text' name='opt' id='opt"+ odd+"'' value='' /></td>";
+                // rowTr += "<td><input type='text' name='cont' id='cont"+ odd +"'' value='' /></td>";
+                // rowTr += "<td><img src='cross_gray.png' alt='삭제'></td>";
+                // rowTr += "</tr>";
+
+                //$("#table").append(rowTr); //1, 1, 1, 2,2
+
+                if(jsonData != "" ){
+                    json_data_info = JSON.parse(jsonData);
+
+                    //console.log(Object.keys(json_data_info).length);
+
+                    var lastItemNo =$('#table tr:last').attr("class").replace("item","");
+
+                    var row = parseInt(lastItemNo)+2;
+                    var odd  = row + 1;
+
+                   var jsonLength = Object.keys(json_data_info).length;
+                   var temLen;
+                   var temOdd;
+                    var rowTr1="";
+                    $(json_data_info).each(function(index,item){
+
+                        temLen = index + 1; //
+                        temOdd = temLen + 1;
+
+                        //console.log(temLen + "=="+ temOdd)
+                        if(temLen%2 == 1) {//홀수일경우,1,3
+
+                            rowTr1 += "<tr class='item" +  temLen + "'>";
+                        }
+                        //console.log(index+"="+temLen+"="+item.name + "=" + item.value);
+
+                        rowTr1 += "<td><input type='text' name='opt' id='opt"+ temLen +"' value='' "+item.name+"/></td>";
+                        rowTr1 += "<td><input type='text' name='cont' id='cont"+ temLen+"'' value='' "+item.value+"/></td>";
+
+                        if(temLen%2 == 0 ) {//짝수 일경우
+                            rowTr1 += "<td><img src='cross_gray.png' alt='삭제'></td>";
+                            rowTr1 += "</tr>";
+                        }
+                        console.log(index+"="+temLen);
+
+                    });
+                    console.log(rowTr1);
+                   $("#table").append(rowTr1);
+
+                   /*
+                   <tr class='item1'>
+                        <td><input type='text' name='opt' id='opt1' value='' apple/></td>
+                        <td><input type='text' name='cont' id='cont1'' value='' 1/></td>
+                        <td><input type='text' name='opt' id='opt2' value='' google/></td>
+                        <td><input type='text' name='cont' id='cont2'' value='' 2/></td>
+                    <tr class='item3'>
+                        <td><input type='text' name='opt' id='opt3' value='' samsung/></td>
+                        <td><input type='text' name='cont' id='cont3'' value='' 3/></td>
+                        <td><img src='cross_gray.png' alt='삭제'></td>
+                      </tr>
+                      <td><input type='text' name='opt' id='opt4' value='' lg/></td>
+                      <td><input type='text' name='cont' id='cont4'' value='' 4/></td>
+                    */
+                }
+            }
+            function setSetting_info(){
+                var json_data_arr = [];
+
+                var optKey;
+                var contValue;
+                $("input[name=opt]").each(function (i){
+
+                    optKey =  $(this).val();
+
+                    contValue= $("input[name=cont]").eq(i).val();
+                    console.log('-------------------------------------------');
+                    console.log("i=" + i);
+                    console.log("optKey="+optKey);
+                    console.log("contValue="+contValue);
+                    json_data_arr.push({'name':optKey,'value':contValue});
+
+                    optKey = "";
+                    contValue = "";
+                });
+                //json_data_arr.push({'name' : 'product' , 'value' : 'Apple MacBook'});
+                //json_data_arr.push({'name' : 'product1' , 'value' : 'Apple MacBooK Air'});
+
+                $("#setting_info").val(JSON.stringify(json_data_arr));
+                alert($("#setting_info").val());
+            }
+            /*
+
+            $(document).ready(function(){
+                if('add' == 'add'){
+                    var toDay = new Date()
+                    var y1 = toDay.getFullYear();
+                    var y2 = toDay.getFullYear()+100;
+                    var m = toDay.getMonth() + 1;
+                    var d = toDay.getDate();
+                    $("#date_start_1").val(y1+"/"+m+"/"+d);
+                    $("#period_start_date").val(y1+"/"+m+"/"+d);
+                    $("#period_end_date").val(y1+"/"+m+"/"+d);
+
+
+
+                }else{
+                    var json_data_info = '';
+                    if($("#setting_info").val() != "" ){
+                        json_data_info = JSON.parse($("#setting_info").val());
+                        $(json_data_info).each(function(index,item){
+                            console.log(item)
+                            // $('input[name='+ item.name +']').val(item.value);
+                            if(item.value == 'Y'){
+                                $('#' + item.name + '_1').prop('checked', true);
+                            }else{
+                                $('#' + item.name + '_2').prop('checked', true);
+                            }
+                        });
+                    }
+                }
+            });
+
+            function setSetting_info(){
+                var json_data_arr = [];
+                $('input.setting_info').each(function(){
+                    if($(this).is(':checked')){
+                        console.log('-------------------------------------------');
+                        console.log($(this).attr('name'));
+                        console.log($(this).val());
+                        json_data_arr.push({'name' : $(this).attr('name') , 'value' : $(this).val()});
+                    }
+                })
+                $("#setting_info").val(JSON.stringify(json_data_arr));
+            }
+            */
+
         });
 </script>
 
 <body>
 
 <button id="addTR">날 누르면 추가가 됨</button>
+<button id="jsonValue">json</button>
+<button id="jsonParse">jsonParse</button>
 <table id="table" border="1">
     <tr class='item0'>
         <th  class="hr-table-td">
@@ -56,6 +213,8 @@
             삭제
         </th>
     </tr>
+
+    <input type="hidden" name="setting_info" id="setting_info" value="" />
 </table>
 
 
